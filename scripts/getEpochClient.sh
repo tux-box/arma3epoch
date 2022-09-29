@@ -8,9 +8,11 @@ appID="107410"
 modID="421839251"
 modName="@epoch"
 ${STEAMCMD_DIR}/steamcmd \
-+force_install_dir ${ARMA_DIR} \
 +login ${USERNAME} ${PASSWRD} \
-+workshop_download_item ${GAME_ID} ${modID} \
++force_install_dir ${ARMA_DIR} \
++app_update "233780" \
++workshop_download_item ${GAME_ID} ${modID} validate \
 +quit
 
+echo ---Reanaming file to match mod name----
 mv  ${ARMA_DIR}/${modID} ${ARMA_DIR}/${modName}

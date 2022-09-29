@@ -44,7 +44,7 @@ RUN mkdir $DATA_DIR && \
         mkdir $ARMA_DIR && \
         useradd -d $DATA_DIR -s /bin/bash $USER && \
         chown -R $USER $DATA_DIR && \
-        apt-get update && apt-get install -y git curl && \
+        apt-get update && apt-get install -y git curl nano && \
         ulimit -n 2048
 
 ADD /scripts/ /scripts/

@@ -4,7 +4,7 @@
 ### Get the Epoch Server Files source /script/getEpochServer.sh
 git clone https://github.com/EpochModTeam/Epoch.git /tmp/epoch_serv_src
 /bin/bash /scripts/makeLowerCase.sh /tmp/epoch_serv_src
-cp -r /tmp/epoch_serv_src/server_install_pack/ ${ARMA_DIR}
+cp -r /tmp/epoch_serv_src/server_install_pack/* ${ARMA_DIR}
 
 ### Get the Epoch Client Files, aka Epoch Mod source /script/getEpochClient.sh
 #TO DO make this array compatable 
