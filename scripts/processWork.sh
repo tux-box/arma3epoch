@@ -1,46 +1,25 @@
 #!/bin/bash
 #the primary work script that calls all other work to be done.
 
-### Get the Epoch Server Files source /script/getEpochServer.sh
-git clone https://github.com/EpochModTeam/Epoch.git /tmp/epoch_serv_src
-/bin/bash /scripts/makeLowerCase.sh /tmp/epoch_serv_src
-cp -r /tmp/epoch_serv_src/server_install_pack/* ${ARMA_DIR}
+#install some tools to use.
+apt-get update && apt-get install -y git curl nano
 
-### Get the Epoch Client Files, aka Epoch Mod source /script/getEpochClient.sh
-#TO DO make this array compatable 
-DESKTOP_ARMA_ID="107410"
-MOD_ID="421839251"
-MOD_NAME="@epoch"
+#Making sure all the files are uptodate
+git clone https://github.com/tux-box/arma3epoch.git $DATA_DIR
 
-${STEAMCMD_DIR}/steamcmd \
-+force_install_dir ${ARMA_DIR} \
-+login ${USERNAME} ${PASSWRD} \
-+app_update ${GAME_ID} \
-+workshop_download_item ${DESKTOP_ARMA_ID} ${MOD_ID} \
-+quit
+#get the Arma 3 server files
+source $DATA_DIR/scripts/getArma3server.sh
 
-cat /root/.steam/logs/workshop_log.txt
+#get the epoch server files
+source $DATA_DIR/scripts/getEpochServer.sh
 
-echo ---Reanaming file to match mod name----
-ln -s  /serverdata/serverfiles/steamapps/workshop/${MOD_ID} ${ARMA_DIR}/${MOD_NAME}
+#get the epoch client files AKA Epoch mod
+source /script/getEpochClient.sh
 
-### Personalize the server. source /script/personalizeFiles.sh
-#list of files to change.
-# sc/basic-example.cfg
-# sc/server-example.cfg
-# battleye
-# @epochhive/epochah.hpp
-# @epochhive/epochconfig.hpp
-# @epochhive/epochserver.ini
+### Personalize the server. 
+source /script/personalizeFiles.sh
 
-mv ${ARMA_DIR}/sc/basic-example.cfg ${ARMA_DIR}/sc/basic.cfg
-mv ${ARMA_DIR}/sc/server-example.cfg ${ARMA_DIR}/sc/server.cfg
-sed "s|EpochMod.com (0.5|1.68) ID02 YourHost|${SERVER_NAME}|" ${ARMA_DIR}/sc/server.cfg
-sed 's|password         	= "";|password         	= "${SERVER_PASSWRD}";|' ${ARMA_DIR}/sc/server.cfg
-sed 's|CHANGE_THIS_PASSWORD!|"${ADMIN_PASSWRD}"|' ${ARMA_DIR}/sc/server.cfg
-sed "s|adminMenu_Owner[] = {};|adminMenu_Owner[] = {${ADMIN_ARRAY}};|" ${ARMA_DIR}/@epochhive/epochah.hpp
-sed "2s|127.0.0.1|${REDIS_IP}|" ${ARMA_DIR}/@epochhive/epochserver.ini
-
+### Last items
 echo "---Prepare Server---"
 if [ ! -f ${DATA_DIR}/.steam/sdk32/steamclient.so ]; then
 	if [ ! -d ${DATA_DIR}/.steam ]; then
@@ -55,5 +34,4 @@ chmod -R ${DATA_PERM} ${DATA_DIR}
 echo "---Server ready---"
 
 ### Start the server source ${ARMA_DIR}/epoch_linux_startscript.sh
-
 sleep 1h

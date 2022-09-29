@@ -1,5 +1,4 @@
-#!/bin/bash
-# this file makes changes to the following files
+#list of files to change.
 # sc/basic-example.cfg
 # sc/server-example.cfg
 # battleye
