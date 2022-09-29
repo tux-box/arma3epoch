@@ -22,13 +22,13 @@ if [ "${USERNAME}" == "" ]; then
     if [ "${VALIDATE}" == "true" ]; then
     	echo "---Validating installation---"
         ${STEAMCMD_DIR}/steamcmd.sh \
-        +force_install_dir ${SERVER_DIR} \
+        +force_install_dir ${ARMA_DIR} \
         +login anonymous \
         +app_update ${GAME_ID} validate \
         +quit
     else
         ${STEAMCMD_DIR}/steamcmd.sh \
-        +force_install_dir ${SERVER_DIR} \
+        +force_install_dir ${ARMA_DIR} \
         +login anonymous \
         +app_update ${GAME_ID} \
         +quit
@@ -37,13 +37,13 @@ else
     if [ "${VALIDATE}" == "true" ]; then
     	echo "---Validating installation---"
         ${STEAMCMD_DIR}/steamcmd.sh \
-        +force_install_dir ${SERVER_DIR} \
+        +force_install_dir ${ARMA_DIR} \
         +login ${USERNAME} ${PASSWRD} \
         +app_update ${GAME_ID} validate \
         +quit
     else
         ${STEAMCMD_DIR}/steamcmd.sh \
-        +force_install_dir ${SERVER_DIR} \
+        +force_install_dir ${ARMA_DIR} \
         +login ${USERNAME} ${PASSWRD} \
         +app_update ${GAME_ID} \
         +quit
@@ -64,5 +64,5 @@ chmod -R ${DATA_PERM} ${DATA_DIR}
 echo "---Server ready---"
 
 echo "---Start Server---"
-cd ${SERVER_DIR}
-${SERVER_DIR}/srcds_run -game ${GAME_NAME} ${GAME_PARAMS} -console +port ${GAME_PORT}
+cd ${ARMA_DIR}
+${ARMA_DIR}/srcds_run -game ${GAME_NAME} ${GAME_PARAMS} -console +port ${GAME_PORT}
