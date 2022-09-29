@@ -8,9 +8,9 @@ appID="107410"
 modID="421839251"
 modName="@epoch"
 ${STEAMCMD_DIR}/steamcmd \
-+force_install_dir ${SERVER_DIR} \
++force_install_dir ${ARMA_DIR} \
 +login ${USERNAME} ${PASSWRD} \
 +workshop_download_item ${GAME_ID} ${modID} \
 +quit
 
-mv  ${SERVER_DIR}/${modID} ${SERVER_DIR}/${modName}
+mv  ${ARMA_DIR}/${modID} ${ARMA_DIR}/${modName}

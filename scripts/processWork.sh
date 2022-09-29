@@ -3,5 +3,6 @@
 
 source /script/installSteamApp.sh
 source /script/getEpochServer.sh
-source /script/startSteamApp.sh
-
+source /script/getEpochClient.sh
+source /script/personalizeFiles.sh
+source ${SERVER_DIR}/epoch_linux_startscript.sh
