@@ -38,10 +38,13 @@ ENV OTHERPARAMS="-maxMem=2047 -nosound -exthreads=1 -noCB -autoinit -loadMission
 ENV MODS=@epoch
 ENV SERVERMODS=@epochhive
 
+WORKDIR /
+
 RUN mkdir $DATA_DIR && \
         mkdir $ARMA_DIR && \
         useradd -d $DATA_DIR -s /bin/bash $USER && \
         chown -R $USER $DATA_DIR && \
+		apt-get update && apt-get install -y git curl && \
         ulimit -n 2048
 
 ADD /scripts/ /scripts/
