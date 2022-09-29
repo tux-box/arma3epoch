@@ -51,3 +51,4 @@ echo "---Server ready---"
 
 ### Start the server source ${ARMA_DIR}/epoch_linux_startscript.sh
 
+sleep 1h
