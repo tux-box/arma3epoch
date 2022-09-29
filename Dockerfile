@@ -1,4 +1,4 @@
-FROM tuxbox1/steamcmd
+FROM steamcmd/steamcmd:ubuntu-20
 #sets up and installs a steam dedicated server
 
 MAINTAINER tux-box <nathan.flow@gmail.com>
@@ -19,5 +19,15 @@ ENV PASSWRD=""
 ENV USER="steam"
 ENV DATA_PERM=770
 
+RUN mkdir $DATA_DIR && \
+	mkdir $STEAMCMD_DIR && \
+	mkdir $SERVER_DIR && \
+	useradd -d $DATA_DIR -s /bin/bash $USER && \
+	chown -R $USER $DATA_DIR && \
+	ulimit -n 2048
+
+ADD /scripts/ /scripts/
+RUN chmod -R 770 /scripts/
+
 #Server Start
-ENTRYPOINT ["/scripts/installSteamApp.sh"]
+ENTRYPOINT ["/scripts/processWork.sh"]
