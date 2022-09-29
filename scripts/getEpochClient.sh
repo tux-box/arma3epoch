@@ -4,15 +4,18 @@
 # arma server ID= 
 # epoch mod ID=421839251
 
-appID="107410"
-modID="421839251"
-modName="@epoch"
+DESKTOP_ARMA_ID="107410"
+MOD_ID="421839251"
+MOD_NAME="@epoch"
+
 ${STEAMCMD_DIR}/steamcmd \
-+login ${USERNAME} ${PASSWRD} \
 +force_install_dir ${ARMA_DIR} \
-+app_update "233780" \
-+workshop_download_item ${GAME_ID} ${modID} validate \
++login ${USERNAME} ${PASSWRD} \
++app_update ${GAME_ID} \
++workshop_download_item ${DESKTOP_ARMA_ID} ${MOD_ID} \
 +quit
 
+cat /root/.steam/logs/workshop_log.txt
+
 echo ---Reanaming file to match mod name----
-mv  ${ARMA_DIR}/${modID} ${ARMA_DIR}/${modName}
+ln -s  /serverdata/serverfiles/steamapps/workshop/${MOD_ID} ${ARMA_DIR}/${MOD_NAME}

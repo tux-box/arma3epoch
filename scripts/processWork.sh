@@ -8,16 +8,21 @@ cp -r /tmp/epoch_serv_src/server_install_pack/* ${ARMA_DIR}
 
 ### Get the Epoch Client Files, aka Epoch Mod source /script/getEpochClient.sh
 #TO DO make this array compatable 
-appID="107410"
-modID="421839251"
-modName="@epoch"
+DESKTOP_ARMA_ID="107410"
+MOD_ID="421839251"
+MOD_NAME="@epoch"
+
 ${STEAMCMD_DIR}/steamcmd \
 +force_install_dir ${ARMA_DIR} \
 +login ${USERNAME} ${PASSWRD} \
-+workshop_download_item ${GAME_ID} ${modID} \
++app_update ${GAME_ID} \
++workshop_download_item ${DESKTOP_ARMA_ID} ${MOD_ID} \
 +quit
 
-mv  ${ARMA_DIR}/${modID} ${ARMA_DIR}/${modName}
+cat /root/.steam/logs/workshop_log.txt
+
+echo ---Reanaming file to match mod name----
+ln -s  /serverdata/serverfiles/steamapps/workshop/${MOD_ID} ${ARMA_DIR}/${MOD_NAME}
 
 ### Personalize the server. source /script/personalizeFiles.sh
 #list of files to change.
