@@ -1,9 +1,6 @@
 #!/bin/bash
 #the primary work script that calls all other work to be done.
 
-#install some tools to use.
-apt-get update && apt-get install -y git curl nano
-
 #get the Arma 3 server files
 source $DATA_DIR/scripts/getArma3server.sh
 

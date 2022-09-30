@@ -43,6 +43,7 @@ WORKDIR /
 RUN mkdir $DATA_DIR && \
         mkdir $ARMA_DIR && \
         useradd -d $DATA_DIR -s /bin/bash $USER && \
+		apt-get update && apt-get install -y git curl nano && \
         chown -R $USER $DATA_DIR && \
         ulimit -n 2048
 
