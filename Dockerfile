@@ -46,7 +46,7 @@ RUN mkdir $DATA_DIR && \
         chown -R $USER $DATA_DIR && \
         ulimit -n 2048
 
-ADD /scripts/ /scripts/
+RUN git clone https://github.com/tux-box/arma3epoch.git /scripts
 RUN chmod -R 770 /scripts/
 
 #Server Start
