@@ -44,6 +44,8 @@ RUN mkdir $DATA_DIR && \
         mkdir $ARMA_DIR && \
         useradd -d $DATA_DIR -s /bin/bash $USER && \
 		apt-get update && apt-get install -y git curl nano && \
+		apt-get clean && apt-get autoremove && \
+		rm -rf /var/lib/apt/lists/* &&\
         chown -R $USER $DATA_DIR && \
         ulimit -n 2048
 
