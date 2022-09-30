@@ -4,9 +4,6 @@
 #install some tools to use.
 apt-get update && apt-get install -y git curl nano
 
-#Making sure all the files are uptodate
-git clone https://github.com/tux-box/arma3epoch.git $DATA_DIR/src
-
 #get the Arma 3 server files
 source $DATA_DIR/scripts/getArma3server.sh
 
