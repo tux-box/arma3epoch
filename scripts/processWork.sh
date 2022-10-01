@@ -28,4 +28,4 @@ chmod -R ${DATA_PERM} ${DATA_DIR}
 echo "---Server ready---"
 
 ### Start the server source ${ARMA_DIR}/epoch_linux_startscript.sh
-sleep 1h
+sleep 30m
