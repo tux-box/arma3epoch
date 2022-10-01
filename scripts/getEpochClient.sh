@@ -10,4 +10,4 @@ MOD_NAME="@epoch"
 
 ${STEAMCMD_DIR}/steamcmd +login ${USERNAME} ${PASSWRD} +app_update ${DESKTOP_ARMA_ID} +workshop_download_item ${DESKTOP_ARMA_ID} ${MOD_ID} +quit
 echo ---Creating Symbolic link for ${MOD_NAME}----
-ln -s  /serverdata/serverfiles/steamapps/workshop/${MOD_ID} ${ARMA_DIR}/${MOD_NAME}
+ln -s ~/.steam/SteamApps/workshop/content/${DESKTOP_ARMA_ID}/${MOD_ID} ${ARMA_DIR}/${MOD_NAME}
