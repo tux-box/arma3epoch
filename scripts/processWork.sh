@@ -8,10 +8,10 @@ source /src/scripts/getArma3server.sh
 source /src/scripts/getEpochServer.sh
 
 #get the epoch client files AKA Epoch mod
-source /src/script/getEpochClient.sh
+source /src/scripts/getEpochClient.sh
 
 ### Personalize the server. 
-source /src/script/personalizeFiles.sh
+source /src/scripts/personalizeFiles.sh
 
 ### Last items
 echo "---Prepare Server---"

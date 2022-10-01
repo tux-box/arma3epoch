@@ -12,5 +12,5 @@ MOD_NAME="@epoch"
 ${STEAMCMD_DIR}/steamcmd \
 +force_install_dir ${ARMA_DIR} \
 +login ${USERNAME} ${PASSWRD} \
-+app_update ${GAME_ID} \
++app_update ${DESKTOP_ARMA_ID} \
 +quit
