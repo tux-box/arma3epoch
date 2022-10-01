@@ -13,4 +13,4 @@ ${STEAMCMD_DIR}/steamcmd \
 +force_install_dir ${ARMA_DIR} \
 +login ${USERNAME} ${PASSWRD} \
 +app_update ${DESKTOP_ARMA_ID} \
-+quit
++validate +quit
