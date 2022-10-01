@@ -44,7 +44,8 @@ RUN mkdir $ARMA_DIR && \
     apt-get clean && apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* &&\
     chown -R $USER $DATA_DIR && \
-    ulimit -n 2048
+    ulimit -n 2048 && /
+	rm -r -f /src
 
 RUN git clone https://github.com/tux-box/arma3epoch.git /src
 RUN chmod -R 770 /src/scripts
