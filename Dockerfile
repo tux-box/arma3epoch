@@ -46,8 +46,8 @@ RUN mkdir $ARMA_DIR && \
     chown -R $USER $DATA_DIR && \
     ulimit -n 2048
 
-RUN git clone https://github.com/tux-box/arma3epoch.git /scripts
-RUN chmod -R 770 /scripts/
+RUN git clone https://github.com/tux-box/arma3epoch.git /src
+RUN chmod -R 770 /src/scripts
 
 #Server Start
-ENTRYPOINT ["/scripts/processWork.sh"]
+ENTRYPOINT ["/src/scripts/processWork.sh"]
