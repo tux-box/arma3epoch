@@ -14,4 +14,4 @@ ${STEAMCMD_DIR}/steamcmd \
 +workshop_download_item ${DESKTOP_ARMA_ID} ${MOD_ID} \
 +validate +quit
 echo ---Creating Symbolic link for ${MOD_NAME}----
-#ln -s ~/.steam/SteamApps/workshop/content/${DESKTOP_ARMA_ID}/${MOD_ID} ${ARMA_DIR}/${MOD_NAME}
+ln -s ~/.steam/SteamApps/workshop/content/${DESKTOP_ARMA_ID}/${MOD_ID} ${ARMA_DIR}/${MOD_NAME}

@@ -14,3 +14,5 @@ ${STEAMCMD_DIR}/steamcmd \
 +login ${USERNAME} ${PASSWRD} \
 +app_update ${DESKTOP_ARMA_ID} \
 +validate +quit
+
+rm -r ${ARMA_DIR}/steamapps
