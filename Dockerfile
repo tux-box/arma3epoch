@@ -1,4 +1,4 @@
-FROM tuxbox1/steamcmd:latest
+FROM steamcmd/steamcmd:latest
 #sets up and installs a steam dedicated server
 
 MAINTAINER tux-box <nathan.flow@gmail.com>

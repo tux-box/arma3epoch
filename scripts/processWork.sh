@@ -13,7 +13,6 @@
 ### Personalize the server. 
 #source /src/scripts/personalizeFiles.sh
 
-
 ### Last items
 echo "---Prepare Server---"
 if [ ! -f ${DATA_DIR}/.steam/sdk32/steamclient.so ]; then
