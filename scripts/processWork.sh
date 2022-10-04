@@ -2,16 +2,16 @@
 #the primary work script that calls all other work to be done.
 
 #get the Arma 3 server files
-source /src/scripts/getArma3server.sh
+source $DATA_DIR/src/scripts/getArma3server.sh
 
 #get the epoch server files
-source /src/scripts/getEpochServer.sh
+source $DATA_DIR/src/scripts/getEpochServer.sh
 
 #get the epoch client files AKA Epoch mod
-source /src/scripts/getEpochClient.sh
+source $DATA_DIR/src/scripts/getEpochClient.sh
 
 ### Personalize the server. 
-source /src/scripts/personalizeFiles.sh
+source $DATA_DIR/src/scripts/personalizeFiles.sh
 
 ### Last items
 echo "---Prepare Server---"
@@ -27,5 +27,5 @@ fi
 chmod -R ${DATA_PERM} ${DATA_DIR}
 echo "---Server ready---"
 
-### Start the server source ${ARMA_DIR}/epoch_linux_startscript.sh
+### Start the server source ${FORCE_INSTALL_DIR}/epoch_linux_startscript.sh
 sleep 30m

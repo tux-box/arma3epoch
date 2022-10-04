@@ -1,7 +1,7 @@
 #!/bin/bash
 # workshop_download_item 301650 656993383
 # arma desktop ID= 107410 https://steamcommunity.com/app/107410/workshop/
-# arma server ID= 
+# arma server ID= 233780
 # epoch mod ID=421839251
 
 DESKTOP_ARMA_ID="107410"
@@ -9,10 +9,12 @@ SERVER_ARMA_ID="233780" #current ${GAME_ID}
 MOD_ID="421839251"
 MOD_NAME="@epoch"
 
+APP_UPDATE=
+
 ${STEAMCMD_DIR}/steamcmd \
-+force_install_dir ${ARMA_DIR} \
++force_install_dir ${FORCE_INSTALL_DIR} \
 +login ${USERNAME} ${PASSWRD} \
-+app_update ${DESKTOP_ARMA_ID} \
++app_update ${APP_UPDATE} \
 +validate +quit
 
-rm -r ${ARMA_DIR}/steamapps
+rm -r ${FORCE_INSTALL_DIR}/steamapps

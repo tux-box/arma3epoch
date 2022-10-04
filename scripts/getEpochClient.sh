@@ -4,14 +4,14 @@
 # arma server ID= 
 # epoch mod ID=421839251
 
-DESKTOP_ARMA_ID="107410"
-MOD_ID="421839251"
+APP_UPDATE="107410"
+WORKSHOP_DOWNLOAD_ITEM="421839251"
 MOD_NAME="@epoch"
 
 ${STEAMCMD_DIR}/steamcmd \
 +login ${USERNAME} ${PASSWRD} \
-+app_update ${DESKTOP_ARMA_ID} \
-+workshop_download_item ${DESKTOP_ARMA_ID} ${MOD_ID} \
++app_update ${APP_UPDATE} \
++workshop_download_item ${APP_UPDATE} ${WORKSHOP_DOWNLOAD_ITEM} \
 +validate +quit
 echo ---Creating Symbolic link for ${MOD_NAME}----
-ln -s ~/.steam/SteamApps/workshop/content/${DESKTOP_ARMA_ID}/${MOD_ID} ${ARMA_DIR}/${MOD_NAME}
+ln -s ~/.steam/SteamApps/workshop/content/${APP_UPDATE}/${WORKSHOP_DOWNLOAD_ITEM} ${FORCE_INSTALL_DIR}/${MOD_NAME}

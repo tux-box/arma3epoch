@@ -9,20 +9,27 @@ MAINTAINER tux-box <nathan.flow@gmail.com>
 
 ### Default container
 ENV DATA_DIR="/serverdata"
-ENV STEAMCMD_DIR="/usr/games"
-ENV ARMA_DIR="${DATA_DIR}/serverfiles"
-ENV GAME_ID="template"
-ENV GAME_NAME="template"
-ENV GAME_PARAMS="template"
-ENV PORT=27015
-ENV VALIDATE=""
+
+### Filesystem 
 ENV UMASK=000
 ENV UID=99
 ENV GID=100
-ENV USERNAME=""
-ENV PASSWRD=""
 ENV USER="steam"
 ENV DATA_PERM=770
+
+### Networking
+ENV PORT=27015
+
+###SteamCMD info
+### Creds
+ENV USERNAME=""
+ENV PASSWRD=""
+### SteamCMD configuration
+ENV STEAMCMD_DIR="/usr/games"
+ENV FORCE_INSTALL_DIR=${DATA_DIR}/serverfiles
+ENV APP_UPDATE="template"
+ENV WORKSHOP_DOWNLOAD_ITEM="template"
+ENV VALIDATE="true"
 
 ###For personalization
 ENV SERVER_NAME=DockerEpoch
@@ -40,14 +47,14 @@ ENV SERVERMODS=@epochhive
 
 WORKDIR /
 
-RUN mkdir $ARMA_DIR && \
-    apt-get clean && apt-get autoremove && \
-    rm -rf /var/lib/apt/lists/* &&\
-    chown -R $USER $DATA_DIR && \
-    ulimit -n 2048 && \
-	rm -r -f /src
-
-RUN git clone https://github.com/tux-box/arma3epoch.git /src && chmod -R 770 /src/scripts
+RUN mkdir $FORCE_INSTALL_DIR && \
+apt-get clean && apt-get autoremove && \
+rm -rf /var/lib/apt/lists/* &&\
+chown -R $USER $DATA_DIR && \
+ulimit -n 2048 && \
+rm -r -f $DATA_DIR/src && \
+git clone https://github.com/tux-box/arma3epoch.git $DATA_DIR/src && \
+chmod -R 770 $DATA_DIR/src/scripts
 
 #Server Start
-ENTRYPOINT ["/src/scripts/processWork.sh"]
+ENTRYPOINT ["$DATA_DIR/src/scripts/processWork.sh"]
