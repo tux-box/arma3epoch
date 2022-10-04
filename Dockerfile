@@ -47,7 +47,9 @@ ENV SERVERMODS=@epochhive
 
 WORKDIR /
 
-RUN apt-get clean && apt-get autoremove && \
+RUN apt-get update && \
+apt-get install git nano wget curl -y && \
+apt-get clean && apt-get autoremove && \
 rm -rf /var/lib/apt/lists/* && \
 rm -r -f /src && \
 git clone https://github.com/tux-box/arma3epoch.git /src && \
