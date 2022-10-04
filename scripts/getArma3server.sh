@@ -17,8 +17,8 @@ APP_UPDATE=${DESKTOP_ARMA_ID}
 ${STEAMCMD_DIR}/steamcmd \
 +force_install_dir ${FORCE_INSTALL_DIR} \
 +login ${USERNAME} ${PASSWRD} \
-+app_update ${APP_UPDATE} \
-+validate +quit
++app_update ${APP_UPDATE} validate \
++quit
 
 #cleaning up space for more installs
 rm -r ${FORCE_INSTALL_DIR}/steamapps

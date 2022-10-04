@@ -49,7 +49,7 @@ MOD_NAME="@CUP Units"
 ${STEAMCMD_DIR}/steamcmd \
 +login ${USERNAME} ${PASSWRD} \
 +app_update ${DESKTOP_ARMA_ID} \
-+workshop_download_item ${DESKTOP_ARMA_ID} ${MOD_ID} \
-+validate +quit
++workshop_download_item ${DESKTOP_ARMA_ID} ${MOD_ID} validate \
++quit
 echo ---Creating Symbolic link for ${MOD_NAME}----
 ln -s  /serverdata/serverfiles/steamapps/workshop/${MOD_ID} ${FORCE_INSTALL_DIR}/${MOD_NAME}

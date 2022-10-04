@@ -11,7 +11,7 @@ MOD_NAME="@epoch"
 ${STEAMCMD_DIR}/steamcmd \
 +login ${USERNAME} ${PASSWRD} \
 +app_update ${APP_UPDATE} \
-+workshop_download_item ${APP_UPDATE} ${WORKSHOP_DOWNLOAD_ITEM} \
-+validate +quit
++workshop_download_item ${APP_UPDATE} ${WORKSHOP_DOWNLOAD_ITEM} validate \
++quit
 echo ---Creating Symbolic link for ${MOD_NAME}----
 ln -s ~/.steam/SteamApps/workshop/content/${APP_UPDATE}/${WORKSHOP_DOWNLOAD_ITEM} ${FORCE_INSTALL_DIR}/${MOD_NAME}
