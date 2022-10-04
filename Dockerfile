@@ -58,4 +58,4 @@ chmod -R 770 $DATA_DIR/src/scripts && \
 ulimit -n 2048
 
 #Server Start
-ENTRYPOINT ["/bin/bash $DATA_DIR/src/scripts/processWork.sh"]
+ENTRYPOINT ["/bin/bash ${DATA_DIR}/src/scripts/processWork.sh"]
