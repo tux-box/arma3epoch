@@ -48,8 +48,7 @@ ENV SERVERMODS=@epochhive
 WORKDIR /
 
 RUN apt-get clean && apt-get autoremove && \
-rm -rf /var/lib/apt/lists/* && \
-
+rm -rf /var/lib/apt/lists/* 
 
 #Server Start
 ENTRYPOINT ["/bin/bash ${DATA_DIR}/src/scripts/processWork.sh"]
