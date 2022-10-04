@@ -48,8 +48,8 @@ ENV SERVERMODS=@epochhive
 WORKDIR /
 
 RUN apt-get clean && apt-get autoremove && \
-rm -rf /var/lib/apt/lists/* &&\
-mkdir  $DATA_DIR && /
+rm -rf /var/lib/apt/lists/* && \
+mkdir  $DATA_DIR && \
 mkdir $FORCE_INSTALL_DIR && \
 chown -R $USER $DATA_DIR && \
 rm -r -f $DATA_DIR/src && \
