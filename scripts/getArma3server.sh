@@ -4,6 +4,8 @@
 # arma server ID= 233780
 # epoch mod ID=421839251
 
+rm -r ${FORCE_INSTALL_DIR}/steamapps
+
 DESKTOP_ARMA_ID="107410"
 SERVER_ARMA_ID="233780" #current ${GAME_ID} 
 MOD_ID="421839251"
