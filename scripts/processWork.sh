@@ -1,7 +1,7 @@
 #!/bin/bash
 #the primary work script that calls all other work to be done.
-if [ ! -d ${DATA_DIR}]; then
-   mkdir ${DATA_DIR}]
+if [ ! -d ${DATA_DIR} ]; then
+   mkdir ${DATA_DIR}
    chown -R $USER $DATA_DIR
 fi
 if [ ! -d ${FORCE_INSTALL_DIR} ]; then

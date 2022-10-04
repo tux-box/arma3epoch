@@ -4,6 +4,7 @@
 # arma server ID= 233780
 # epoch mod ID=421839251
 
+#cleaning up space for install
 rm -r ${FORCE_INSTALL_DIR}/steamapps
 
 DESKTOP_ARMA_ID="107410"
@@ -19,4 +20,5 @@ ${STEAMCMD_DIR}/steamcmd \
 +app_update ${APP_UPDATE} \
 +validate +quit
 
+#cleaning up space for more installs
 rm -r ${FORCE_INSTALL_DIR}/steamapps
