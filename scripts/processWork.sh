@@ -1,5 +1,13 @@
 #!/bin/bash
 #the primary work script that calls all other work to be done.
+if [ ! -d ${DATA_DIR}]; then
+   mkdir ${DATA_DIR}]
+   chown -R $USER $DATA_DIR
+fi
+if [ ! -d ${FORCE_INSTALL_DIR} ]; then
+	mkdir $FORCE_INSTALL_DIR
+fi
+
 
 #get the Arma 3 server files
 #source /src/scripts/getArma3server.sh
