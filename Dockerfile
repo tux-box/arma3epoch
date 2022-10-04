@@ -51,10 +51,10 @@ RUN apt-get clean && apt-get autoremove && \
 rm -rf /var/lib/apt/lists/* && \
 mkdir $FORCE_INSTALL_DIR && \
 chown -R $USER $DATA_DIR && \
-rm -r -f $DATA_DIR/src && \
-git clone https://github.com/tux-box/arma3epoch.git $DATA_DIR/src && \
-chmod -R 770 $DATA_DIR/src/scripts && \
+rm -r -f /src && \
+git clone https://github.com/tux-box/arma3epoch.git /src && \
+chmod -R 770 /src/scripts && \
 ulimit -n 2048
 
 #Server Start
-ENTRYPOINT ["/bin/bash '${DATA_DIR}'/src/scripts/processWork.sh"]
+ENTRYPOINT ["/src/scripts/processWork.sh"]

@@ -2,16 +2,16 @@
 #the primary work script that calls all other work to be done.
 
 #get the Arma 3 server files
-source ${DATA_DIR}/src/scripts/getArma3server.sh
+source /src/scripts/getArma3server.sh
 
 #get the epoch server files
-source ${DATA_DIR}/src/scripts/getEpochServer.sh
+source /src/scripts/getEpochServer.sh
 
 #get the epoch client files AKA Epoch mod
-source ${DATA_DIR}/src/scripts/getEpochClient.sh
+source /src/scripts/getEpochClient.sh
 
 ### Personalize the server. 
-source ${DATA_DIR}/src/scripts/personalizeFiles.sh
+source /src/scripts/personalizeFiles.sh
 
 ### Last items
 echo "---Prepare Server---"
