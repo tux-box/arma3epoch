@@ -9,7 +9,7 @@ SERVER_ARMA_ID="233780" #current ${GAME_ID}
 MOD_ID="421839251"
 MOD_NAME="@epoch"
 
-APP_UPDATE=
+APP_UPDATE=${DESKTOP_ARMA_ID}
 
 ${STEAMCMD_DIR}/steamcmd \
 +force_install_dir ${FORCE_INSTALL_DIR} \
