@@ -10,13 +10,13 @@ fi
 
 
 #get the Arma 3 server files
-#source /src/scripts/getArma3server.sh
+source /src/scripts/getArma3server.sh
 
 #get the epoch client files AKA Epoch mod
-#source /src/scripts/getEpochClient.sh
+source /src/scripts/getEpochClient.sh
 
 #get the epoch server files
-#source /src/scripts/getEpochServer.sh
+source /src/scripts/getEpochServer.sh
 
 ### Personalize the server. 
 #source /src/scripts/personalizeFiles.sh

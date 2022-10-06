@@ -15,4 +15,4 @@ ${STEAMCMD_DIR}/steamcmd \
 +workshop_download_item ${APP_UPDATE} ${WORKSHOP_DOWNLOAD_ITEM} validate \
 +quit
 echo ---Creating Symbolic link for ${MOD_NAME}----
-#ln -s ~/.steam/SteamApps/workshop/content/${APP_UPDATE}/${WORKSHOP_DOWNLOAD_ITEM} ${FORCE_INSTALL_DIR}/${MOD_NAME}
+ln -s /root/.steam/SteamApps/workshop/content/${APP_UPDATE}/${WORKSHOP_DOWNLOAD_ITEM} ${FORCE_INSTALL_DIR}/${MOD_NAME}
