@@ -9,6 +9,7 @@ WORKSHOP_DOWNLOAD_ITEM="421839251"
 MOD_NAME="@epoch"
 
 ${STEAMCMD_DIR}/steamcmd \
++force_install_dir ${FORCE_INSTALL_DIR} \
 +login ${USERNAME} ${PASSWRD} \
 +app_update ${APP_UPDATE} \
 +workshop_download_item ${APP_UPDATE} ${WORKSHOP_DOWNLOAD_ITEM} validate \
