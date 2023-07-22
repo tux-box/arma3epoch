@@ -28,7 +28,7 @@ do
 done
 
 # install arma 3
-/serverdata/steamcmd/steamcmd.sh +login $USERNAME $PASSWRD +force_install_dir /serverdata/serverfiles "+app_update 233780" $MODLIST validate +quit
+/serverdata/steamcmd/steamcmd.sh +force_install_dir /serverdata/serverfiles "+app_update 233780" $MODLIST validate +login $USERNAME $PASSWRD +quit
 
 # move into arma3 folder
 cd $SERVER_DIR
@@ -101,9 +101,9 @@ done
 eval ${PRESCRIPT}
 
 # move back into arma3 folder
-cd $SERVER_DIR
-if [ -f "$FILE" ]; then
-   ./$FILE -port=2302 -profiles=/sc -mod="$ARMAMODS" -serverMod="$ARMASERVERMODS" -config="/arma3/sc/server.cfg" -cfg="/arma3/sc/basic.cfg" -name=SC -world=empty -autoinit
-else
-   echo "Cannot find $FILE"
-fi
+#cd $SERVER_DIR
+#if [ -f "$FILE" ]; then
+#   ./$FILE -port=2302 -profiles=/sc -mod="$ARMAMODS" -serverMod="$ARMASERVERMODS" -config="/arma3/sc/server.cfg" -cfg="/arma3/sc/basic.cfg" -name=SC -world=empty -autoinit
+#else
+#   echo "Cannot find $FILE"
+#fi
