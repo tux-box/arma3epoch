@@ -47,7 +47,7 @@ ln -s $SERVER_DIR"/keys"  $SERVER_DIR"/Keys"
 # perform install of mods
 for i in "${!mods[@]}"
 do
-	MODFILE="/serverdata/Steam/steamapps/workshop/content/107410/$i"
+	MODFILE="/serverdata/serverfiles/steamapps/workshop/content/107410/$i"
 	if [ -d "$MODFILE" ]; then
 		# convert to mod to lowercase
 		cd $MODFILE
@@ -64,7 +64,7 @@ done
 
 for i in "${!servermods[@]}"
 do
-	MODFILE="/serverdata/Steam/steamapps/workshop/content/107410/$i"
+	MODFILE="/serverdata/serverfiles/steamapps/workshop/content/107410/$i"
 	if [ -d "$MODFILE" ]; then
 		# convert to mod to lowercase
 		cd $MODFILE
