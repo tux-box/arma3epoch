@@ -41,8 +41,8 @@ if [ ! -f "$FILE" ]; then
 fi
 
 #link common folders
-ln -s $SERVER_DIR"/mpmissions"  $SERVER_DIR"/MPMissions"
-ln -s $SERVER_DIR"/keys"  $SERVER_DIR"/Keys"
+#ln -s $SERVER_DIR"/mpmissions"  $SERVER_DIR"/MPMissions"
+#ln -s $SERVER_DIR"/keys"  $SERVER_DIR"/Keys"
 
 # perform install of mods
 for i in "${!mods[@]}"
@@ -68,7 +68,20 @@ do
 	if [ -d "$MODFILE" ]; then
 		# convert to mod to lowercase
 		cd $MODFILE
-		ls | while read upName; do loName=`echo "${upName}" | tr '[:upper:]' '[:lower:]'`; mv "$upName" "$loName"; done
+		#ls | while read upName; do loName=`echo "${upName}" | tr '[:upper:]' '[:lower:]'`; mv "$upName" "$loName"; done
+        #process all subdirectories and files in parent directory
+        all="$(find $1 -depth)"
+
+        for name in ${all}; do
+            #set new name in lower case for files and directories
+            new_name="$(dirname "${name}")/$(basename "${name}" | tr '[A-Z]' '[a-z]')"
+
+            #check if new name already exists
+            if [ "${name}" != "${new_name}" ]; then
+                [ ! -e "${new_name}" ] && mv -T "${name}" "${new_name}"; echo "${name} was renamed to ${new_name}" || echo "${name} wasn't renamed!"
+            fi
+        done
+
 		#install server mods
 		ln -s $MODFILE $SERVER_DIR"/"${servermods[$i]}
    		#special extra install for 558243173
