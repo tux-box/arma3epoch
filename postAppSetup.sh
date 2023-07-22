@@ -10,7 +10,7 @@ RCONPASSWORD=${RCONPASSWORD:-changemen0w}
 
 #:: Epoch Workshop IDs: Experimental = 455221958 Normal = 421839251
 mods[421839251]='@epoch'
-servermods[601772725]='@epochhive'
+servermods[1642000412]='@epochhive'
 
 # build mod list
 MODLIST=""
