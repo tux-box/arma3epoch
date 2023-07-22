@@ -28,7 +28,7 @@ do
 done
 
 # install arma 3
-/serverdata/steamcmd/steamcmd.sh +force_install_dir /serverdata/serverfiles "+app_update 233780" $MODLIST validate +login $USERNAME $PASSWRD +quit
+/serverdata/steamcmd/steamcmd.sh +login $USERNAME $PASSWRD +force_install_dir /serverdata/serverfiles "+app_update 233780" $MODLIST validate +quit
 
 # move into arma3 folder
 cd $SERVER_DIR
